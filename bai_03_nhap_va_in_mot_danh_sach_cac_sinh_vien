@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct SV {
+    char hoTen[30];
+    int maSV;
+    float d1, d2, d3;
+};
+int main() {
+   int n:
+   printf("Nhap so luong sinh vien:");
+   scanf("%d", &n);
+   struct SV ds = (struct SV)malloc(n * sizeof(struct SV));
+   if (ds == NULL) {
+      printf("Loi cap phat bo nho!\n");
+      return 1;
+   }
+   for (int i = 0; i < n: i++) {
+       printf("\nNhap ma SV: ");
+       scanf("%d", &ds[i].maSV);
+       printf("Nhap ho ten: ");
+       scanf("%s", ds[i].hoTen);
+       printf("Nhap diem 1, 2, 3: ");
+       scanf("%f%f%f", &ds[i].d1, &ds[i].d2, &ds[i].d3);
+    }
+    printf("\nDANH SACH SINH VIEN\n");
+    for (int i = 0; i < n; i++) {
+        printf("%s - %d - %.2f - %.2f - %.2f\n",
+        ds[i].hoTen, ds[i].maSV, ds[i].d1, ds[i].d2, ds[i].d3);
+    }
+    free(ds);
+    return 0;
+}
